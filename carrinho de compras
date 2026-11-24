@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+    double preco, total = 0.0;
+    int qtd = 0;
+
+    printf("Digite o preco do produto (0 encerra): ");
+    scanf("%lf", &preco);
+
+    while (preco != 0.0) {
+        if (preco < 0.0) {
+            printf("Valor negativo rejeitado!\n");
+        } else {
+            total += preco;
+            qtd++;
+        }
+        printf("Digite o preco do produto (0 encerra): ");
+        scanf("%lf", &preco);
+    }
+
+    printf("Produtos: %d | Total: R$ %.2f\n", qtd, total);
+    return 0;
+}
