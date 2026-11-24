@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(void) {
+    double venda, faturamento = 0.0;
+    int qtd = 0;
+
+    printf("Valor da venda (0 encerra): ");
+    scanf("%lf", &venda);
+
+    while (venda != 0.0) {
+        if (venda < 0.0) {
+            printf("Valor negativo ignorado.\n");
+        } else {
+            faturamento += venda;
+            qtd++;
+        }
+        printf("Valor da venda (0 encerra): ");
+        scanf("%lf", &venda);
+    }
+
+    printf("Quantidade de vendas: %d\n", qtd);
+    printf("Faturamento total: R$ %.2f\n", faturamento);
+    if (qtd > 0) {
+        printf("Ticket medio: R$ %.2f\n", faturamento / qtd);
+    } else {
+        printf("Ticket medio: R$ 0.00 (sem vendas)\n");
+    }
+    return 0;
+}
