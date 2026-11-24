@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void) {
+    double gb, mb, kb;
+    printf("Digite o tamanho em GB: ");
+    scanf("%lf", &gb);
+
+    mb = gb * 1024.0;
+    kb = mb * 1024.0;
+
+    printf("%.2f GB = %.2f MB = %.2f KB\n", gb, mb, kb);
+    return 0;
+}
