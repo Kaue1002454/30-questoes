@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+    const int SECRETO = 42;
+    int palpite, tentativas = 0;
+
+    do {
+        printf("Digite seu palpite: ");
+        scanf("%d", &palpite);
+        tentativas++;
+
+        if (palpite < SECRETO) {
+            printf("O numero secreto e MAIOR.\n");
+        } else if (palpite > SECRETO) {
+            printf("O numero secreto e MENOR.\n");
+        }
+    } while (palpite != SECRETO);
+
+    printf("Acertou! Voce precisou de %d tentativa(s).\n", tentativas);
+    return 0;
+}
