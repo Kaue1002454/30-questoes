@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void) {
+    double bruto, desc1_pct, desc2_pct;
+    double val_desc1, val_desc2, salario_liquido;
+
+    printf("Salario bruto: ");
+    scanf("%lf", &bruto);
+    printf("Percentual do 1o desconto (%%): ");
+    scanf("%lf", &desc1_pct);
+    printf("Percentual do 2o desconto (%%): ");
+    scanf("%lf", &desc2_pct);
+
+    val_desc1 = bruto * (desc1_pct / 100.0);
+    val_desc2 = bruto * (desc2_pct / 100.0);
+    salario_liquido = bruto - val_desc1 - val_desc2;
+
+    printf("Desconto 1: R$ %.2f\n", val_desc1);
+    printf("Desconto 2: R$ %.2f\n", val_desc2);
+    printf("Salario liquido: R$ %.2f\n", salario_liquido);
+    return 0;
+}
