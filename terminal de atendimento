@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+    int opcao;
+    printf("1 - Suporte tecnico\n2 - Financeiro\n3 - Comercial\n4 - Cancelamento\nEscolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1: printf("Encaminhado para: Suporte tecnico.\n"); break;
+        case 2: printf("Encaminhado para: Financeiro.\n"); break;
+        case 3: printf("Encaminhado para: Comercial.\n"); break;
+        case 4: printf("Encaminhado para: Cancelamento.\n"); break;
+        default: printf("Opcao invalida.\n"); break;
+    }
+    return 0;
+}
