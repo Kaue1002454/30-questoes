@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+    int qtd;
+    printf("Quantidade em estoque: ");
+    scanf("%d", &qtd);
+
+    if (qtd < 0) {
+        printf("Quantidade invalida.\n");
+        return 0;
+    }
+
+    // Versao com if/else
+    if (qtd > 0) {
+        printf("[if/else] Disponivel\n");
+    } else {
+        printf("[if/else] Esgotado\n");
+    }
+
+    // Versao com operador ternario
+    printf("[ternario] %s\n", qtd > 0 ? "Disponivel" : "Esgotado");
+    return 0;
+}
