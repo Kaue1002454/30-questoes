@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+    srand((unsigned int)time(NULL));
+    int secreto = (rand() % 100) + 1;
+    int palpite, tentativas = 0;
+
+    do {
+        printf("Adivinhe o numero (1 a 100): ");
+        scanf("%d", &palpite);
+        tentativas++;
+
+        if (palpite < secreto) {
+            printf("O numero secreto e MAIOR.\n");
+        } else if (palpite > secreto) {
+            printf("O numero secreto e MENOR.\n");
+        }
+    } while (palpite != secreto);
+
+    printf("Parabens! Acertou em %d tentativa(s).\n", tentativas);
+    return 0;
+}
