@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+#define ALUNOS 5
+#define NOTAS 3
+
+int main(void) {
+    double notas[ALUNOS][NOTAS];
+    double maior_nota;
+
+    for (int i = 0; i < ALUNOS; i++) {
+        for (int j = 0; j < NOTAS; j++) {
+            printf("Aluno %d, Nota %d: ", i + 1, j + 1);
+            scanf("%lf", &notas[i][j]);
+            if (i == 0 && j == 0) {
+                maior_nota = notas[i][j];
+            } else if (notas[i][j] > maior_nota) {
+                maior_nota = notas[i][j];
+            }
+        }
+    }
+
+    for (int i = 0; i < ALUNOS; i++) {
+        double soma = 0.0;
+        for (int j = 0; j < NOTAS; j++) {
+            soma += notas[i][j];
+        }
+        double media = soma / NOTAS;
+        printf("Aluno %d -> Media: %.2f | %s\n",
+               i + 1, media, media >= 7.0 ? "Aprovado" : "Reprovado");
+    }
+
+    printf("Maior nota da turma: %.2f\n", maior_nota);
+    return 0;
+}
