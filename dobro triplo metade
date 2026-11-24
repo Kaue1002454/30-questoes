@@ -2,27 +2,12 @@
     #include <locale.h>
     
     //antecessor e sucessor 
-    
-    int main () {
-    	
-    	setlocale(LC_ALL, "PORTUGUESE");
-    	
-    	
-    	float num = 0;
-    	float dob = 2;
-    	float tri = 3;
-    	float met = 0.5;
-    	
-    	printf("número: ");
-    	scanf("%f", &num);
-    	
-    	dob = num * dob;
-    	tri = num * tri;
-    	met = num * met;
-    	
-    	printf ("dobro do número: %.2f \n", dob);
-    	printf ("triplo do número: %.2f \n", tri);
-    	printf ("metade do número: %.2f \n", met);
-    	
-    	return 0;
-	}
+
+int main(void) {
+    double n;
+    printf("Digite um numero: ");
+    scanf("%lf", &n);
+
+    printf("Dobro: %.2f\nTriplo: %.2f\nMetade: %.2f\n", n * 2.0, n * 3.0, n / 2.0);
+    return 0;
+}
