@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <math.h>
+
+double calc_raiz(double x) { return sqrt(x); }
+double calc_quadrado(double x) { return pow(x, 2.0); }
+double calc_floor(double x) { return floor(x); }
+double calc_ceil(double x) { return ceil(x); }
+double calc_round(double x) { return round(x); }
+
+int main(void) {
+    int op;
+    double x;
+
+    do {
+        printf("\n1 - Raiz quadrada\n2 - Potencia ao quadrado\n3 - Arredondar para baixo (floor)\n");
+        printf("4 - Arredondar para cima (ceil)\n5 - Arredondar mais proximo (round)\n0 - Sair\nEscolha: ");
+        scanf("%d", &op);
+
+        if (op >= 1 && op <= 5) {
+            printf("Digite o numero: ");
+            scanf("%lf", &x);
+        }
+
+        switch (op) {
+            case 1:
+                if (x < 0.0) printf("Erro: raiz de numero negativo.\n");
+                else printf("Resultado: %.4f\n", calc_raiz(x));
+                break;
+            case 2:
+                printf("Resultado: %.4f\n", calc_quadrado(x));
+                break;
+            case 3:
+                printf("Resultado: %.2f\n", calc_floor(x));
+                break;
+            case 4:
+                printf("Resultado: %.2f\n", calc_ceil(x));
+                break;
+            case 5:
+                printf("Resultado: %.2f\n", calc_round(x));
+                break;
+            case 0:
+                printf("Encerrando...\n");
+                break;
+            default:
+                printf("Opcao invalida.\n");
+                break;
+        }
+    } while (op != 0);
+
+    return 0;
+}
