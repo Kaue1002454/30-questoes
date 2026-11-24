@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+#define N_VENDAS 10
+
+void exibir_vendas(const double v[], int n) {
+    printf("Vendas registradas:\n");
+    for (int i = 0; i < n; i++) {
+        printf("  [%d] R$ %.2f\n", i + 1, v[i]);
+    }
+}
+
+double calcular_faturamento(const double v[], int n) {
+    double total = 0.0;
+    for (int i = 0; i < n; i++) total += v[i];
+    return total;
+}
+
+double maior_venda(const double v[], int n) {
+    double maior = v[0];
+    for (int i = 1; i < n; i++) {
+        if (v[i] > maior) maior = v[i];
+    }
+    return maior;
+}
+
+int contar_acima_500(const double v[], int n) {
+    int cont = 0;
+    for (int i = 0; i < n; i++) {
+        if (v[i] > 500.0) cont++;
+    }
+    return cont;
+}
+
+int main(void) {
+    double vendas[N_VENDAS];
+
+    for (int i = 0; i < N_VENDAS; i++) {
+        printf("Digite o valor da venda %d: ", i + 1);
+        scanf("%lf", &vendas[i]);
+    }
+
+    exibir_vendas(vendas, N_VENDAS);
+    printf("Faturamento: R$ %.2f\n", calcular_faturamento(vendas, N_VENDAS));
+    printf("Maior venda: R$ %.2f\n", maior_venda(vendas, N_VENDAS));
+    printf("Vendas acima de R$ 500,00: %d\n", contar_acima_500(vendas, N_VENDAS));
+    return 0;
+}
