@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+    double a, b;
+    char op;
+    printf("Digite: numero1 operador numero2 (ex: 10 + 5): ");
+    scanf("%lf %c %lf", &a, &op, &b);
+
+    if (op == '+') {
+        printf("Resultado: %.2f\n", a + b);
+    } else if (op == '-') {
+        printf("Resultado: %.2f\n", a - b);
+    } else if (op == '*') {
+        printf("Resultado: %.2f\n", a * b);
+    } else if (op == '/') {
+        if (b == 0.0) {
+            printf("Erro: divisao por zero nao permitida.\n");
+        } else {
+            printf("Resultado: %.2f\n", a / b);
+        }
+    } else {
+        printf("Operacao invalida.\n");
+    }
+    return 0;
+}
