@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+    double compra, frete, total;
+    printf("Valor da compra: R$ ");
+    scanf("%lf", &compra);
+
+    if (compra < 0.0) {
+        printf("Valor invalido.\n");
+        return 0;
+    }
+
+    frete = (compra >= 200.0) ? 0.0 : 20.0;
+    total = compra + frete;
+
+    printf("Compra: R$ %.2f | Frete: R$ %.2f | Total: R$ %.2f\n", compra, frete, total);
+    return 0;
+}
