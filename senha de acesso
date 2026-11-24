@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void) {
+    const int SENHA_CORRETA = 1234;
+    int tentativa;
+
+    do {
+        printf("Digite a senha numerica: ");
+        scanf("%d", &tentativa);
+        if (tentativa != SENHA_CORRETA) {
+            printf("Senha incorreta.\n");
+        }
+    } while (tentativa != SENHA_CORRETA);
+
+    printf("Acesso permitido!\n");
+    return 0;
+}
