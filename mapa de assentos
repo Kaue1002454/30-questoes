@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+#define LINHAS 4
+#define COLUNAS 5
+
+void exibir_mapa(int sala[LINHAS][COLUNAS]) {
+    printf("\nMapa da sala (0 = livre, 1 = ocupado):\n");
+    for (int i = 0; i < LINHAS; i++) {
+        printf("Linha %d: ", i);
+        for (int j = 0; j < COLUNAS; j++) {
+            printf("[%d] ", sala[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main(void) {
+    int sala[LINHAS][COLUNAS] = {0};
+    int l, c, continuar = 1;
+
+    exibir_mapa(sala);
+
+    while (continuar) {
+        printf("\nReservar assento - Linha (0 a %d) e Coluna (0 a %d): ", LINHAS - 1, COLUNAS - 1);
+        scanf("%d %d", &l, &c);
+
+        if (l < 0 || l >= LINHAS || c < 0 || c >= COLUNAS) {
+            printf("Posicao invalida!\n");
+        } else if (sala[l][c] == 1) {
+            printf("Assento ja ocupado!\n");
+        } else {
+            sala[l][c] = 1;
+            printf("Reserva confirmada!\n");
+        }
+
+        exibir_mapa(sala);
+
+        printf("Deseja fazer outra reserva? (1 - Sim / 0 - Nao): ");
+        scanf("%d", &continuar);
+    }
+
+    return 0;
+}
