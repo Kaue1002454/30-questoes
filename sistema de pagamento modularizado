@@ -1,0 +1,8 @@
+#ifndef PAGAMENTO_H
+#define PAGAMENTO_H
+
+void exibir_formas_pagamento(void);
+double calcular_desconto(double valor, int forma);
+double calcular_total(double valor, int forma);
+
+#endif
