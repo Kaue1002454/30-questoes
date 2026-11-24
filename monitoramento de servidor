@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void) {
+    double cpu;
+    int leituras = 0, criticas = 0;
+
+    while (1) {
+        printf("Uso da CPU (%%) ou -1 para sair: ");
+        scanf("%lf", &cpu);
+
+        if (cpu == -1.0) {
+            break;
+        }
+        if (cpu < 0.0 || cpu > 100.0) {
+            printf("Leitura fora do intervalo (0-100%%), ignorada.\n");
+            continue;
+        }
+
+        leituras++;
+        if (cpu < 70.0) {
+            printf("Status: NORMAL\n");
+        } else if (cpu < 90.0) {
+            printf("Status: ALERTA\n");
+        } else {
+            printf("Status: CRITICO\n");
+            criticas++;
+        }
+    }
+
+    printf("Total de leituras: %d | Leituras criticas: %d\n", leituras, criticas);
+    return 0;
+}
