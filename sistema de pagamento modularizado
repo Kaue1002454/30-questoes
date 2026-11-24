@@ -6,3 +6,42 @@ double calcular_desconto(double valor, int forma);
 double calcular_total(double valor, int forma);
 
 #endif
+
+
+void exibir_formas_pagamento(void) {
+    printf("1 - PIX (5%% de desconto)\n");
+    printf("2 - Cartao (sem desconto)\n");
+    printf("3 - Dinheiro (sem desconto)\n");
+}
+
+double calcular_desconto(double valor, int forma) {
+    if (forma == 1) {
+        return valor * 0.05;
+    }
+    return 0.0;
+}
+
+double calcular_total(double valor, int forma) {
+    return valor - calcular_desconto(valor, forma);
+}
+
+int main(void) {
+    double valor;
+    int forma;
+
+    printf("Valor da compra: R$ ");
+    scanf("%lf", &valor);
+
+    exibir_formas_pagamento();
+    printf("Escolha a forma de pagamento: ");
+    scanf("%d", &forma);
+
+    if (forma < 1 || forma > 3) {
+        printf("Forma de pagamento invalida.\n");
+        return 1;
+    }
+
+    printf("Desconto: R$ %.2f\n", calcular_desconto(valor, forma));
+    printf("Total a pagar: R$ %.2f\n", calcular_total(valor, forma));
+    return 0;
+}
