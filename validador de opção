@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void) {
+    char resp, upper;
+
+    do {
+        printf("Deseja continuar? (S/N): ");
+        scanf(" %c", &resp);
+        upper = (char)toupper((unsigned char)resp);
+
+        if (upper != 'S' && upper != 'N') {
+            printf("Entrada invalida! Digite S ou N.\n");
+        }
+    } while (upper != 'S' && upper != 'N');
+
+    printf("%s\n", (upper == 'S') ? "Operacao continuara." : "Operacao sera encerrada.");
+    return 0;
+}
